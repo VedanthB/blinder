@@ -48,3 +48,6 @@ code {
 
 /* ---------------- Header ------------ */
 @import url("./components/global/header/header.css");
+
+/* ---------------- Shop Page ------------ */
+@import url("./components/shop-page/shop-page.css");

@@ -1,0 +1,15 @@
+.divider {
+  border: 1px solid var(--regal-blue-dark);
+  width: 80%;
+  margin: auto;
+}
+.filters-sidebar-container {
+  height: 100%;
+  width: 20%;
+  /* border: 1px solid var(--regal-blue-dark); */
+  border-radius: 0.5rem;
+}
+.products-display-container {
+  height: 100%;
+  width: 80%;
+}
