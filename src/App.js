@@ -4,8 +4,8 @@ import { Routes, Route } from "react-router-dom";
 function App() {
   return (
     <div className="App">
-       {/* routes */}
-       <Routes>
+      {/* routes */}
+      <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/shop" element={<Shop />} />
         <Route path="/cart" element={<Cart />} />

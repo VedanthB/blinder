@@ -1,0 +1,68 @@
+/* header search bar */
+
+.search__bar__container {
+  width: 30rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.search__bar {
+  margin: 0 auto;
+  width: 100%;
+  height: 3rem;
+  padding: 0 1.25rem;
+  font-size: 1rem;
+  border-radius: 1rem;
+  border: none;
+  background-color: var(--regal-blue);
+  outline: none;
+  color: white;
+}
+.search__bar:focus {
+  border: 2px solid #67e8f9;
+  transition: 0.2s ease;
+}
+.search__bar:focus::-webkit-input-placeholder {
+  transition: opacity 0.45s ease;
+  opacity: 0;
+}
+.search__bar:focus::-moz-placeholder {
+  transition: opacity 0.45s ease;
+  opacity: 0;
+}
+.search__bar:focus:-ms-placeholder {
+  transition: opacity 0.45s ease;
+  opacity: 0;
+}
+
+.search__icon {
+  position: relative;
+  left: -30px;
+}
+/* header search bar */
+
+.card-overlay-text {
+  background-color: var(--regal-blue-transparent);
+}
+
+.logo {
+  font-family: var(--fruktur-font);
+}
+
+.home-page-iframe {
+  max-width: 100%;
+  margin: auto;
+}
+
+.home-page-category-card {
+  background-size: cover;
+  background-repeat: no-repeat;
+  text-align: center;
+}
+
+.home-page-brand-card {
+  background-size: contain;
+  background-repeat: no-repeat;
+  text-align: center;
+}
