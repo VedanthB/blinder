@@ -1,13 +1,50 @@
+@import url("https://argon-css.netlify.app/components/index.css");
+@import url("https://fonts.googleapis.com/css2?family=Fruktur&display=swap");
+
+:root {
+  --regal-blue: #2a2840;
+  --regal-blue-dark: #000022;
+  --regal-blue-transparent: #2a284083;
+  --fruktur-font: "Fruktur", cursive;
+}
+
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-color: var(--regal-blue);
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
+
+.bg-regal-blue {
+  background-color: var(--regal-blue);
+}
+
+.bg-regal-blue-dark {
+  background-color: var(--regal-blue-dark);
+}
+.text-regal-blue {
+  color: var(--regal-blue);
+}
+
+.text-regal-blue-dark {
+  color: var(--regal-blue-dark);
+}
+
+.hover-active-card {
+  transition-duration: 0.5s ease;
+}
+.hover-active-card:hover {
+  transition-duration: 0.5s;
+  transform: scale(1.08);
+}
+
+/* ---------------- Header ------------ */
+@import url("./components/global/header/header.css");
