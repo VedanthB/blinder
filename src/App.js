@@ -1,5 +1,7 @@
 import "./App.css";
 
+import { useEffect } from "react";
+
 import { Routes, Route } from "react-router-dom";
 
 import Mockman from "mockman-js";
@@ -17,7 +19,6 @@ import Footer from "./components/global/Footer";
 
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-import { useEffect } from "react/cjs/react.production.min";
 
 function App() {
   return (
