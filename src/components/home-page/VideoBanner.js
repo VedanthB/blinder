@@ -8,8 +8,8 @@ function VideoBanner() {
         src="https://www.youtube-nocookie.com/embed/IxTyLks2bAY?controls=0"
         title="YouTube video player"
         frameborder="0"
-        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-        allowfullscreen
+        // allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        // allowfullscreen
       ></iframe>
     </div>
   );
