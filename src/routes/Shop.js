@@ -9,8 +9,6 @@ function Shop() {
 
   const { products } = state;
 
-  console.log(products);
-
   return (
     <main
       style={{ top: "5rem", minHeight: "180vh" }}
@@ -24,13 +22,9 @@ function Shop() {
         </div>
 
         <div style={{ gap: "4rem" }} className="grid grid-cols-3">
-          {/* <ProductCard product={{}} />
-          <ProductCard />
-          <ProductCard />
-          <ProductCard />
-          <ProductCard />
-          <ProductCard />
-          <ProductCard /> */}
+          {products.map((product) => (
+            <ProductPageCard product={product} />
+          ))}
         </div>
 
         <div className="spacer-3rem"></div>

@@ -16,7 +16,7 @@ export const products = [
     brand: "santa-cruz",
     totalRating: 565,
     totalStars: 4,
-    img: "/src/assets/product_images/santa_cruz_skateboard_1.webp",
+    img: "https://res.cloudinary.com/supertramp69420/image/upload/v1648989364/blinder-ecom/santa_cruz_skateboard_1_wuvfow.webp",
     qty: 1,
     offers: {
       fastDelivery: true,
@@ -24,6 +24,7 @@ export const products = [
       newArrival: false,
       inStock: true,
       bestSeller: false,
+      newArrival: true,
     },
   },
   {
@@ -36,7 +37,7 @@ export const products = [
     brand: "santa-cruz",
     totalRating: 535,
     totalStars: 5,
-    img: "/src/assets/product_images/santa_cruz_skateboard_2.webp",
+    img: "https://res.cloudinary.com/supertramp69420/image/upload/v1648989363/blinder-ecom/santa_cruz_skateboard_2_gm6kos.webp",
     qty: 1,
     offers: {
       fastDelivery: true,
@@ -44,6 +45,7 @@ export const products = [
       newArrival: false,
       inStock: true,
       bestSeller: false,
+      newArrival: true,
     },
   },
   {
@@ -56,7 +58,7 @@ export const products = [
     brand: "santa-cruz",
     totalRating: 435,
     totalStars: 4,
-    img: "/src/assets/product_images/santa_cruz_skateboard_3.webp",
+    img: "https://res.cloudinary.com/supertramp69420/image/upload/v1648989364/blinder-ecom/santa_cruz_skateboard_3_jqio3h.webp",
     qty: 1,
     offers: {
       fastDelivery: true,
@@ -64,6 +66,7 @@ export const products = [
       newArrival: false,
       inStock: true,
       bestSeller: false,
+      newArrival: true,
     },
   },
   {
@@ -76,7 +79,7 @@ export const products = [
     brand: "santa-cruz",
     totalRating: 235,
     totalStars: 4,
-    img: "/src/assets/product_images/santa_cruz_skateboard_4.webp",
+    img: "https://res.cloudinary.com/supertramp69420/image/upload/v1648989363/blinder-ecom/santa_cruz_skateboard_4_mgaej2.webp",
     qty: 1,
     offers: {
       fastDelivery: true,
@@ -84,6 +87,7 @@ export const products = [
       newArrival: false,
       inStock: true,
       bestSeller: false,
+      newArrival: true,
     },
   },
   {
@@ -96,7 +100,7 @@ export const products = [
     brand: "santa-cruz",
     totalRating: 345,
     totalStars: 3,
-    img: "/src/assets/product_images/santa_cruz_skateboard_5.webp",
+    img: "https://res.cloudinary.com/supertramp69420/image/upload/v1648989364/blinder-ecom/santa_cruz_skateboard_5_iqmuhg.webp",
     qty: 1,
     offers: {
       fastDelivery: true,
@@ -104,6 +108,7 @@ export const products = [
       newArrival: false,
       inStock: true,
       bestSeller: false,
+      newArrival: true,
     },
   },
   {
@@ -116,7 +121,7 @@ export const products = [
     brand: "santa-cruz",
     totalRating: 325,
     totalStars: 5,
-    img: "/src/assets/product_images/santa_cruz_skateboard_6.webp",
+    img: "https://res.cloudinary.com/supertramp69420/image/upload/v1648989364/blinder-ecom/santa_cruz_skateboard_6_d4cjvo.webp",
     qty: 1,
     offers: {
       fastDelivery: true,
@@ -124,6 +129,7 @@ export const products = [
       newArrival: false,
       inStock: true,
       bestSeller: false,
+      newArrival: true,
     },
   },
   {
@@ -136,7 +142,7 @@ export const products = [
     brand: "thrasher",
     totalRating: 325,
     totalStars: 5,
-    img: "/src/assets/product_images/thrasher_jacket_1.jpg",
+    img: "https://res.cloudinary.com/supertramp69420/image/upload/v1648989364/blinder-ecom/thrasher_jacket_1_inbvte.jpg",
     qty: 1,
     offers: {
       fastDelivery: true,
@@ -144,6 +150,7 @@ export const products = [
       newArrival: false,
       inStock: true,
       bestSeller: false,
+      newArrival: true,
     },
   },
   {
@@ -156,7 +163,7 @@ export const products = [
     brand: "thrasher",
     totalRating: 135,
     totalStars: 4,
-    img: "/src/assets/product_images/thrasher_jacket_2.jpg",
+    img: "https://res.cloudinary.com/supertramp69420/image/upload/v1648989365/blinder-ecom/thrasher_jacket_2_dji5du.jpg",
     qty: 1,
     offers: {
       fastDelivery: true,
@@ -164,6 +171,7 @@ export const products = [
       newArrival: false,
       inStock: true,
       bestSeller: false,
+      newArrival: true,
     },
   },
   {
@@ -176,7 +184,7 @@ export const products = [
     brand: "thrasher",
     totalRating: 23,
     totalStars: 2,
-    img: "/src/assets/product_images/thrasher_jacket_3.jpg",
+    img: "https://res.cloudinary.com/supertramp69420/image/upload/v1648989365/blinder-ecom/thrasher_jacket_3_lllzbo.jpg",
     qty: 1,
     offers: {
       fastDelivery: true,
@@ -184,6 +192,7 @@ export const products = [
       newArrival: false,
       inStock: true,
       bestSeller: false,
+      newArrival: true,
     },
   },
   {
@@ -196,7 +205,7 @@ export const products = [
     brand: "thrasher",
     totalRating: 673,
     totalStars: 3,
-    img: "/src/assets/product_images/thrasher_jacket_4.jpg",
+    img: "https://res.cloudinary.com/supertramp69420/image/upload/v1648989365/blinder-ecom/thrasher_jacket_4_qaqgp2.jpg",
     qty: 1,
     offers: {
       fastDelivery: true,
@@ -204,6 +213,7 @@ export const products = [
       newArrival: false,
       inStock: true,
       bestSeller: false,
+      newArrival: true,
     },
   },
   {
@@ -216,7 +226,7 @@ export const products = [
     brand: "thrasher",
     totalRating: 573,
     totalStars: 4,
-    img: "/src/assets/product_images/thrasher_jacket_5.jpg",
+    img: "https://res.cloudinary.com/supertramp69420/image/upload/v1648989365/blinder-ecom/thrasher_jacket_5_psx5dx.jpg",
     qty: 1,
     offers: {
       fastDelivery: true,
@@ -224,6 +234,7 @@ export const products = [
       newArrival: false,
       inStock: true,
       bestSeller: false,
+      newArrival: true,
     },
   },
   {
@@ -236,7 +247,7 @@ export const products = [
     brand: "thrasher",
     totalRating: 553,
     totalStars: 1,
-    img: "/src/assets/product_images/thrasher_jacket_6.jpg",
+    img: "https://res.cloudinary.com/supertramp69420/image/upload/v1648989365/blinder-ecom/thrasher_jacket_6_ikae5n.jpg",
     qty: 1,
     offers: {
       fastDelivery: true,
@@ -244,6 +255,7 @@ export const products = [
       newArrival: false,
       inStock: true,
       bestSeller: false,
+      newArrival: true,
     },
   },
   {
@@ -256,7 +268,7 @@ export const products = [
     brand: "thrasher",
     totalRating: 583,
     totalStars: 1,
-    img: "/src/assets/product_images/thrasher_jacket_7.jpg",
+    img: "https://res.cloudinary.com/supertramp69420/image/upload/v1648989366/blinder-ecom/thrasher_jacket_7_gpj8nl.jpg",
     qty: 1,
     offers: {
       fastDelivery: true,
@@ -264,6 +276,7 @@ export const products = [
       newArrival: false,
       inStock: true,
       bestSeller: false,
+      newArrival: true,
     },
   },
   {
@@ -276,7 +289,7 @@ export const products = [
     brand: "urban-monkey",
     totalRating: 543,
     totalStars: 4,
-    img: "/src/assets/product_images/urban_monkey_cap_1.webp",
+    img: "https://res.cloudinary.com/supertramp69420/image/upload/v1648989366/blinder-ecom/urban_monkey_cap_1_oyzqm4.webp",
     qty: 1,
     offers: {
       fastDelivery: true,
@@ -284,6 +297,7 @@ export const products = [
       newArrival: false,
       inStock: true,
       bestSeller: false,
+      newArrival: true,
     },
   },
   {
@@ -296,7 +310,7 @@ export const products = [
     brand: "urban-monkey",
     totalRating: 643,
     totalStars: 4,
-    img: "/src/assets/product_images/urban_monkey_cap_2.webp",
+    img: "https://res.cloudinary.com/supertramp69420/image/upload/v1648989364/blinder-ecom/urban_monkey_cap_2_qfsxzd.webp",
     qty: 1,
     offers: {
       fastDelivery: true,
@@ -304,6 +318,7 @@ export const products = [
       newArrival: false,
       inStock: true,
       bestSeller: false,
+      newArrival: true,
     },
   },
   {
@@ -316,7 +331,7 @@ export const products = [
     brand: "urban-monkey",
     totalRating: 673,
     totalStars: 3,
-    img: "/src/assets/product_images/urban_monkey_cap_3.webp",
+    img: "https://res.cloudinary.com/supertramp69420/image/upload/v1648989364/blinder-ecom/urban_monkey_cap_3_jhdlxf.webp",
     qty: 1,
     offers: {
       fastDelivery: true,
@@ -324,6 +339,7 @@ export const products = [
       newArrival: false,
       inStock: true,
       bestSeller: false,
+      newArrival: true,
     },
   },
   {
@@ -336,7 +352,7 @@ export const products = [
     brand: "urban-monkey",
     totalRating: 373,
     totalStars: 5,
-    img: "/src/assets/product_images/urban_monkey_cap_4.webp",
+    img: "https://res.cloudinary.com/supertramp69420/image/upload/v1648989364/blinder-ecom/urban_monkey_cap_4_abprm3.webp",
     qty: 1,
     offers: {
       fastDelivery: true,
@@ -344,6 +360,7 @@ export const products = [
       newArrival: false,
       inStock: true,
       bestSeller: false,
+      newArrival: true,
     },
   },
   {
@@ -356,7 +373,7 @@ export const products = [
     brand: "urban-monkey",
     totalRating: 373,
     totalStars: 5,
-    img: "/src/assets/product_images/urban_monkey_cap_5.webp",
+    img: "https://res.cloudinary.com/supertramp69420/image/upload/v1648989364/blinder-ecom/urban_monkey_cap_5_f3aqr3.webp",
     qty: 1,
     offers: {
       fastDelivery: true,
@@ -364,6 +381,7 @@ export const products = [
       newArrival: false,
       inStock: true,
       bestSeller: false,
+      newArrival: true,
     },
   },
   {
@@ -376,7 +394,7 @@ export const products = [
     brand: "urban-monkey",
     totalRating: 473,
     totalStars: 5,
-    img: "/src/assets/product_images/urban_monkey_cap_6.webp",
+    img: "https://res.cloudinary.com/supertramp69420/image/upload/v1648989365/blinder-ecom/urban_monkey_cap_6_sugam7.webp",
     qty: 1,
     offers: {
       fastDelivery: true,
@@ -384,6 +402,7 @@ export const products = [
       newArrival: false,
       inStock: true,
       bestSeller: false,
+      newArrival: true,
     },
   },
   {
@@ -396,7 +415,7 @@ export const products = [
     brand: "urban-monkey",
     totalRating: 673,
     totalStars: 2,
-    img: "/src/assets/product_images/urban_monkey_cap_7.webp",
+    img: "https://res.cloudinary.com/supertramp69420/image/upload/v1648989365/blinder-ecom/urban_monkey_cap_7_j4syyn.webp",
     qty: 1,
     offers: {
       fastDelivery: true,
@@ -404,6 +423,7 @@ export const products = [
       newArrival: false,
       inStock: true,
       bestSeller: false,
+      newArrival: true,
     },
   },
   {
@@ -416,7 +436,7 @@ export const products = [
     brand: "urban-monkey",
     totalRating: 673,
     totalStars: 2,
-    img: "/src/assets/product_images/urban_monkey_cap_8.webp",
+    img: "https://res.cloudinary.com/supertramp69420/image/upload/v1648989365/blinder-ecom/urban_monkey_cap_8_cvs5b7.webp",
     qty: 1,
     offers: {
       fastDelivery: true,
@@ -424,6 +444,7 @@ export const products = [
       newArrival: false,
       inStock: true,
       bestSeller: false,
+      newArrival: true,
     },
   },
   {
@@ -436,7 +457,7 @@ export const products = [
     brand: "urban-monkey",
     totalRating: 673,
     totalStars: 2,
-    img: "/src/assets/product_images/urban_monkey_cap_9.webp",
+    img: "https://res.cloudinary.com/supertramp69420/image/upload/v1648989365/blinder-ecom/urban_monkey_cap_9_dxgsur.webp",
     qty: 1,
     offers: {
       fastDelivery: true,
@@ -444,6 +465,7 @@ export const products = [
       newArrival: false,
       inStock: true,
       bestSeller: false,
+      newArrival: true,
     },
   },
   {
@@ -456,7 +478,7 @@ export const products = [
     brand: "urban-monkey",
     totalRating: 273,
     totalStars: 5,
-    img: "/src/assets/product_images/urban_monkey_cap_10.webp",
+    img: "https://res.cloudinary.com/supertramp69420/image/upload/v1648989366/blinder-ecom/urban_monkey_cap_10_alrlda.webp",
     qty: 1,
     offers: {
       fastDelivery: true,
@@ -464,6 +486,7 @@ export const products = [
       newArrival: false,
       inStock: true,
       bestSeller: false,
+      newArrival: true,
     },
   },
   {
@@ -476,7 +499,7 @@ export const products = [
     brand: "urban-monkey",
     totalRating: 273,
     totalStars: 5,
-    img: "/src/assets/product_images/urban_monkey_cap_11.webp",
+    img: "https://res.cloudinary.com/supertramp69420/image/upload/v1648989366/blinder-ecom/urban_monkey_cap_11_bkevbh.webp",
     qty: 1,
     offers: {
       fastDelivery: true,
@@ -484,6 +507,7 @@ export const products = [
       newArrival: false,
       inStock: true,
       bestSeller: false,
+      newArrival: true,
     },
   },
   {
@@ -496,7 +520,7 @@ export const products = [
     brand: "urban-monkey",
     totalRating: 273,
     totalStars: 5,
-    img: "/src/assets/product_images/urban_monkey_jacket_1.webp",
+    img: "https://res.cloudinary.com/supertramp69420/image/upload/v1648989366/blinder-ecom/urban_monkey_jacket_1_u4obwh.webp",
     qty: 1,
     offers: {
       fastDelivery: true,
@@ -504,6 +528,7 @@ export const products = [
       newArrival: false,
       inStock: true,
       bestSeller: false,
+      newArrival: true,
     },
   },
   {
@@ -516,7 +541,7 @@ export const products = [
     brand: "urban-monkey",
     totalRating: 293,
     totalStars: 5,
-    img: "/src/assets/product_images/urban_monkey_jacket_2.webp",
+    img: "https://res.cloudinary.com/supertramp69420/image/upload/v1648989366/blinder-ecom/urban_monkey_jacket_2_jahrfx.webp",
     qty: 1,
     offers: {
       fastDelivery: true,
@@ -524,6 +549,7 @@ export const products = [
       newArrival: false,
       inStock: true,
       bestSeller: false,
+      newArrival: true,
     },
   },
   {
@@ -536,7 +562,7 @@ export const products = [
     brand: "urban-monkey",
     totalRating: 273,
     totalStars: 5,
-    img: "/src/assets/product_images/urban_monkey_jacket_3.webp",
+    img: "https://res.cloudinary.com/supertramp69420/image/upload/v1648989366/blinder-ecom/urban_monkey_jacket_3_midmph.webp",
     qty: 1,
     offers: {
       fastDelivery: true,
@@ -544,6 +570,7 @@ export const products = [
       newArrival: false,
       inStock: true,
       bestSeller: false,
+      newArrival: true,
     },
   },
   {
@@ -556,7 +583,7 @@ export const products = [
     brand: "urban-monkey",
     totalRating: 573,
     totalStars: 4,
-    img: "/src/assets/product_images/urban_monkey_jacket_4.webp",
+    img: "https://res.cloudinary.com/supertramp69420/image/upload/v1648989367/blinder-ecom/urban_monkey_jacket_4_wqb575.webp",
     qty: 1,
     offers: {
       fastDelivery: true,
@@ -564,6 +591,7 @@ export const products = [
       newArrival: false,
       inStock: true,
       bestSeller: false,
+      newArrival: true,
     },
   },
   {
@@ -576,7 +604,7 @@ export const products = [
     brand: "urban-monkey",
     totalRating: 473,
     totalStars: 5,
-    img: "/src/assets/product_images/urban_monkey_jacket_5.webp",
+    img: "https://res.cloudinary.com/supertramp69420/image/upload/v1648989367/blinder-ecom/urban_monkey_jacket_5_pxpeap.webp",
     qty: 1,
     offers: {
       fastDelivery: true,
@@ -584,6 +612,7 @@ export const products = [
       newArrival: false,
       inStock: true,
       bestSeller: false,
+      newArrival: true,
     },
   },
   {
@@ -596,7 +625,7 @@ export const products = [
     brand: "urban-monkey",
     totalRating: 473,
     totalStars: 5,
-    img: "/src/assets/product_images/urban_monkey_jacket_6.webp",
+    img: "https://res.cloudinary.com/supertramp69420/image/upload/v1648989367/blinder-ecom/urban_monkey_jacket_6_yy4nmc.webp",
     qty: 1,
     offers: {
       fastDelivery: true,
@@ -604,6 +633,7 @@ export const products = [
       newArrival: false,
       inStock: true,
       bestSeller: false,
+      newArrival: true,
     },
   },
   {
@@ -616,7 +646,7 @@ export const products = [
     brand: "urban-monkey",
     totalRating: 473,
     totalStars: 5,
-    img: "/src/assets/product_images/urban_monkey_jacket_7.webp",
+    img: "https://res.cloudinary.com/supertramp69420/image/upload/v1648989368/blinder-ecom/urban_monkey_jacket_7_oujosk.webp",
     qty: 1,
     offers: {
       fastDelivery: true,
@@ -624,6 +654,7 @@ export const products = [
       newArrival: false,
       inStock: true,
       bestSeller: false,
+      newArrival: true,
     },
   },
   {
@@ -636,7 +667,7 @@ export const products = [
     brand: "urban-monkey",
     totalRating: 473,
     totalStars: 5,
-    img: "/src/assets/product_images/urban_monkey_jacket_8.webp",
+    img: "https://res.cloudinary.com/supertramp69420/image/upload/v1648989367/blinder-ecom/urban_monkey_jacket_8_ocssg3.webp",
     qty: 1,
     offers: {
       fastDelivery: true,
@@ -644,6 +675,7 @@ export const products = [
       newArrival: false,
       inStock: true,
       bestSeller: false,
+      newArrival: true,
     },
   },
   {
@@ -656,7 +688,7 @@ export const products = [
     brand: "urban-monkey",
     totalRating: 476,
     totalStars: 4,
-    img: "/src/assets/product_images/urban_monkey_mask_1.webp",
+    img: "https://res.cloudinary.com/supertramp69420/image/upload/v1648989367/blinder-ecom/urban_monkey_mask_1_gjn7uh.webp",
     qty: 1,
     offers: {
       fastDelivery: true,
@@ -664,6 +696,7 @@ export const products = [
       newArrival: false,
       inStock: true,
       bestSeller: false,
+      newArrival: true,
     },
   },
   {
@@ -676,7 +709,7 @@ export const products = [
     brand: "urban-monkey",
     totalRating: 376,
     totalStars: 4,
-    img: "/src/assets/product_images/urban_monkey_mask_2.webp",
+    img: "https://res.cloudinary.com/supertramp69420/image/upload/v1648989367/blinder-ecom/urban_monkey_mask_2_zgfu8x.webp",
     qty: 1,
     offers: {
       fastDelivery: true,
@@ -684,6 +717,7 @@ export const products = [
       newArrival: false,
       inStock: true,
       bestSeller: false,
+      newArrival: true,
     },
   },
   {
@@ -696,7 +730,7 @@ export const products = [
     brand: "urban-monkey",
     totalRating: 476,
     totalStars: 4,
-    img: "/src/assets/product_images/urban_monkey_mask_3.webp",
+    img: "https://res.cloudinary.com/supertramp69420/image/upload/v1648989368/blinder-ecom/urban_monkey_mask_3_iiaibx.webp",
     qty: 1,
     offers: {
       fastDelivery: true,
@@ -704,6 +738,7 @@ export const products = [
       newArrival: false,
       inStock: true,
       bestSeller: false,
+      newArrival: true,
     },
   },
   {
@@ -716,7 +751,7 @@ export const products = [
     brand: "urban-monkey",
     totalRating: 476,
     totalStars: 4,
-    img: "/src/assets/product_images/urban_monkey_mask_4.webp",
+    img: "https://res.cloudinary.com/supertramp69420/image/upload/v1648989368/blinder-ecom/urban_monkey_mask_4_djdzdm.webp",
     qty: 1,
     offers: {
       fastDelivery: true,
@@ -724,6 +759,7 @@ export const products = [
       newArrival: false,
       inStock: true,
       bestSeller: false,
+      newArrival: true,
     },
   },
   {
@@ -736,7 +772,7 @@ export const products = [
     brand: "urban-monkey",
     totalRating: 476,
     totalStars: 4,
-    img: "/src/assets/product_images/urban_monkey_mask_5.webp",
+    img: "https://res.cloudinary.com/supertramp69420/image/upload/v1648989368/blinder-ecom/urban_monkey_mask_5_lvc6gr.webp",
     qty: 1,
     offers: {
       fastDelivery: true,
@@ -744,6 +780,7 @@ export const products = [
       newArrival: false,
       inStock: true,
       bestSeller: false,
+      newArrival: true,
     },
   },
   {
@@ -756,7 +793,7 @@ export const products = [
     brand: "urban-monkey",
     totalRating: 476,
     totalStars: 4,
-    img: "/src/assets/product_images/urban_monkey_mask_6.webp",
+    img: "https://res.cloudinary.com/supertramp69420/image/upload/v1648989368/blinder-ecom/urban_monkey_mask_6_yuf8kq.webp",
     qty: 1,
     offers: {
       fastDelivery: true,
@@ -764,6 +801,7 @@ export const products = [
       newArrival: false,
       inStock: true,
       bestSeller: false,
+      newArrival: true,
     },
   },
   {
@@ -776,7 +814,7 @@ export const products = [
     brand: "urban-monkey",
     totalRating: 476,
     totalStars: 4,
-    img: "/src/assets/product_images/urban_monkey_mask_2.webp",
+    img: "https://res.cloudinary.com/supertramp69420/image/upload/v1648989368/blinder-ecom/urban_monkey_wallet_1_azqbuw.webp",
     qty: 1,
     offers: {
       fastDelivery: true,
@@ -784,6 +822,7 @@ export const products = [
       newArrival: false,
       inStock: true,
       bestSeller: false,
+      newArrival: true,
     },
   },
   {
@@ -796,7 +835,7 @@ export const products = [
     brand: "urban-monkey",
     totalRating: 325,
     totalStars: 5,
-    img: "/src/assets/product_images/urban_monkey_skateboard_1.webp",
+    img: "https://res.cloudinary.com/supertramp69420/image/upload/v1648989368/blinder-ecom/urban_monkey_skateboard_1_anpokl.webp",
     qty: 1,
     offers: {
       fastDelivery: true,
@@ -804,6 +843,7 @@ export const products = [
       newArrival: false,
       inStock: true,
       bestSeller: false,
+      newArrival: true,
     },
   },
   {
@@ -816,7 +856,7 @@ export const products = [
     brand: "urban-monkey",
     totalRating: 325,
     totalStars: 5,
-    img: "/src/assets/product_images/urban_monkey_skateboard_2.webp",
+    img: "https://res.cloudinary.com/supertramp69420/image/upload/v1648989368/blinder-ecom/urban_monkey_skateboard_2_qy2lx0.webp",
     qty: 1,
     offers: {
       fastDelivery: true,
@@ -824,6 +864,7 @@ export const products = [
       newArrival: false,
       inStock: true,
       bestSeller: false,
+      newArrival: true,
     },
   },
   {
@@ -836,7 +877,7 @@ export const products = [
     brand: "urban-monkey",
     totalRating: 325,
     totalStars: 5,
-    img: "/src/assets/product_images/urban_monkey_skateboard_3.webp",
+    img: "https://res.cloudinary.com/supertramp69420/image/upload/v1648989368/blinder-ecom/urban_monkey_skateboard_3_ameacd.webp",
     qty: 1,
     offers: {
       fastDelivery: true,
@@ -844,6 +885,7 @@ export const products = [
       newArrival: false,
       inStock: true,
       bestSeller: false,
+      newArrival: true,
     },
   },
   {
@@ -856,7 +898,7 @@ export const products = [
     brand: "vans",
     totalRating: 325,
     totalStars: 5,
-    img: "/src/assets/product_images/vans_jacket_1.webp",
+    img: "https://res.cloudinary.com/supertramp69420/image/upload/v1648989368/blinder-ecom/vans_jacket_1_ziwyh4.webp",
     qty: 1,
     offers: {
       fastDelivery: true,
@@ -864,6 +906,7 @@ export const products = [
       newArrival: false,
       inStock: true,
       bestSeller: false,
+      newArrival: true,
     },
   },
   {
@@ -876,7 +919,7 @@ export const products = [
     brand: "vans",
     totalRating: 325,
     totalStars: 5,
-    img: "/src/assets/product_images/vans_jacket_2.jpg",
+    img: "https://res.cloudinary.com/supertramp69420/image/upload/v1648989368/blinder-ecom/vans_jacket_2_zssjpw.jpg",
     qty: 1,
     offers: {
       fastDelivery: true,
@@ -884,6 +927,7 @@ export const products = [
       newArrival: false,
       inStock: true,
       bestSeller: false,
+      newArrival: true,
     },
   },
   {
@@ -896,7 +940,7 @@ export const products = [
     brand: "vans",
     totalRating: 325,
     totalStars: 5,
-    img: "/src/assets/product_images/vans_jacket_3.webp",
+    img: "https://res.cloudinary.com/supertramp69420/image/upload/v1648989369/blinder-ecom/vans_jacket_3_li67ag.webp",
     qty: 1,
     offers: {
       fastDelivery: true,
@@ -904,6 +948,7 @@ export const products = [
       newArrival: false,
       inStock: true,
       bestSeller: false,
+      newArrival: true,
     },
   },
   {
@@ -916,7 +961,7 @@ export const products = [
     brand: "vans",
     totalRating: 325,
     totalStars: 5,
-    img: "/src/assets/product_images/vans_jacket_4.webp",
+    img: "https://res.cloudinary.com/supertramp69420/image/upload/v1648989369/blinder-ecom/vans_jacket_4_zlcjrl.webp",
     qty: 1,
     offers: {
       fastDelivery: true,
@@ -924,6 +969,7 @@ export const products = [
       newArrival: false,
       inStock: true,
       bestSeller: false,
+      newArrival: true,
     },
   },
   {
@@ -936,7 +982,7 @@ export const products = [
     brand: "vans",
     totalRating: 325,
     totalStars: 5,
-    img: "/src/assets/product_images/vans_jacket_5.webp",
+    img: "https://res.cloudinary.com/supertramp69420/image/upload/v1648989369/blinder-ecom/vans_jacket_5_oznmpo.webp",
     qty: 1,
     offers: {
       fastDelivery: true,
@@ -944,6 +990,7 @@ export const products = [
       newArrival: false,
       inStock: true,
       bestSeller: false,
+      newArrival: true,
     },
   },
   {
@@ -956,7 +1003,7 @@ export const products = [
     brand: "vans",
     totalRating: 325,
     totalStars: 5,
-    img: "/src/assets/product_images/vans_jacket_6.jpg",
+    img: "https://res.cloudinary.com/supertramp69420/image/upload/v1648989369/blinder-ecom/vans_jacket_6_holorh.jpg",
     qty: 1,
     offers: {
       fastDelivery: true,
@@ -964,6 +1011,7 @@ export const products = [
       newArrival: false,
       inStock: true,
       bestSeller: false,
+      newArrival: true,
     },
   },
   {
@@ -976,7 +1024,7 @@ export const products = [
     brand: "vans",
     totalRating: 325,
     totalStars: 5,
-    img: "/src/assets/product_images/vans_jacket_7.webp",
+    img: "https://res.cloudinary.com/supertramp69420/image/upload/v1648989369/blinder-ecom/vans_jacket_7_mdj4dx.webp",
     qty: 1,
     offers: {
       fastDelivery: true,
@@ -984,6 +1032,7 @@ export const products = [
       newArrival: false,
       inStock: true,
       bestSeller: false,
+      newArrival: true,
     },
   },
 ];
