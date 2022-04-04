@@ -1,4 +1,5 @@
 import { useContext, createContext, useReducer } from "react";
+import { filterByCategory } from "../../utils/filterProducts";
 import { sortProducts } from "../../utils/sortProducts";
 import { filterReducer } from "../reducers/filterReducer";
 import { useProducts } from "./ProductProvider";
@@ -33,11 +34,21 @@ export const FiltersProvider = ({ children }) => {
     state: { products },
   } = useProducts();
 
-  let sortedProductsList = sortProducts(products, filtersState.sortBy);
+  let filteredProductsList = filterByCategory(
+    products,
+    filtersState.categories
+  );
+
+  let sortedFilteredList = sortProducts(
+    filteredProductsList,
+    filtersState.sortBy
+  );
+
+  console.log(sortedFilteredList);
 
   return (
     <FiltersContext.Provider
-      value={{ filtersState, filtersDispatch, sortedProductsList }}
+      value={{ filtersState, filtersDispatch, sortedFilteredList }}
     >
       {children}
     </FiltersContext.Provider>
