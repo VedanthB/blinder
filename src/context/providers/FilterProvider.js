@@ -1,5 +1,5 @@
 import { useContext, createContext, useReducer } from "react";
-import { filterByCategory } from "../../utils/filterProducts";
+import { filterByBrands, filterByCategory } from "../../utils/filterProducts";
 import { sortProducts } from "../../utils/sortProducts";
 import { filterReducer } from "../reducers/filterReducer";
 import { useProducts } from "./ProductProvider";
@@ -16,9 +16,9 @@ const filtersInitialState = {
   },
   brands: {
     vans: false,
-    "urban-monkey": false,
+    "urban monkey": false,
     thrasher: false,
-    "santa-cruz": false,
+    "santa cruz": false,
   },
   ratingsGreaterThan: 0,
   priceLessThan: 20000,
@@ -34,13 +34,18 @@ export const FiltersProvider = ({ children }) => {
     state: { products },
   } = useProducts();
 
-  let filteredProductsList = filterByCategory(
+  let filteredByCategoryProductsList = filterByCategory(
     products,
     filtersState.categories
   );
 
+  let filteredByBrandProductsList = filterByBrands(
+    filteredByCategoryProductsList,
+    filtersState.brands
+  );
+
   let sortedFilteredList = sortProducts(
-    filteredProductsList,
+    filteredByBrandProductsList,
     filtersState.sortBy
   );
 

@@ -1,4 +1,6 @@
-import React, { useState, useReducer } from "react";
+import React from "react";
+import FilterByBrands from "./FilterByBrands";
+
 import FilterByCategories from "./FilterByCategories";
 
 function FiltersSidebar() {
@@ -26,33 +28,7 @@ function FiltersSidebar() {
 
       <div className="spacer-1rem"></div>
 
-      <ul className="flex flex-col">
-        <li className="text-white pt-3 pb-3 text-lg">Brands</li>
-        <li className="pt-3 pb-3">
-          <label className="text-white text-lg">
-            <input type="checkbox" value={""} className="mr-3" />
-            Santa Cruz
-          </label>
-        </li>
-        <li className="pb-3">
-          <label className="text-white text-lg">
-            <input type="checkbox" value={""} className="mr-3" />
-            Vans of The Wall
-          </label>
-        </li>
-        <li className="pb-3">
-          <label className="text-white text-lg">
-            <input type="checkbox" value={""} className="mr-3" />
-            Urban Monkey
-          </label>
-        </li>
-        <li className="pb-3">
-          <label className="text-white text-lg">
-            <input type="checkbox" value={""} className="mr-3" />
-            Thrasher
-          </label>
-        </li>
-      </ul>
+      <FilterByBrands />
     </div>
   );
 }

@@ -22,3 +22,26 @@ export const filterByCategory = (products, categoriesFilter) => {
 
   return filterProducts;
 };
+
+export const filterByBrands = (products, brandsFilter) => {
+  let filterProducts = [];
+
+  const noFilterSelected = Object.values(brandsFilter).every((brand) => !brand);
+
+  console.log(noFilterSelected);
+
+  if (noFilterSelected) return products;
+
+  for (let brand in brandsFilter) {
+    let filteredProductsByBrand = [];
+    if (brandsFilter[brand]) {
+      filteredProductsByBrand = products.filter(
+        (product) => product.brand === brand
+      );
+    }
+
+    filterProducts = [...filterProducts, ...filteredProductsByBrand];
+  }
+
+  return filterProducts;
+};
