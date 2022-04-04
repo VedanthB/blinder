@@ -1,47 +1,54 @@
 export const filterByCategory = (products, categoriesFilter) => {
-  let filterProducts = [];
+    let filterProducts = []
 
-  const noFilterSelected = Object.values(categoriesFilter).every(
-    (category) => !category
-  );
+    const noFilterSelected = Object.values(categoriesFilter).every(
+        (category) => !category
+    )
 
-  console.log(noFilterSelected);
+    console.log(noFilterSelected)
 
-  if (noFilterSelected) return products;
+    if (noFilterSelected) return products
 
-  for (let category in categoriesFilter) {
-    let filteredProductsByCategory = [];
-    if (categoriesFilter[category]) {
-      filteredProductsByCategory = products.filter(
-        (product) => product.categoryName === category
-      );
+    for (let category in categoriesFilter) {
+        let filteredProductsByCategory = []
+        if (categoriesFilter[category]) {
+            filteredProductsByCategory = products.filter(
+                (product) => product.categoryName === category
+            )
+        }
+
+        filterProducts = [...filterProducts, ...filteredProductsByCategory]
     }
 
-    filterProducts = [...filterProducts, ...filteredProductsByCategory];
-  }
-
-  return filterProducts;
-};
+    return filterProducts
+}
 
 export const filterByBrands = (products, brandsFilter) => {
-  let filterProducts = [];
+    let filterProducts = []
 
-  const noFilterSelected = Object.values(brandsFilter).every((brand) => !brand);
+    const noFilterSelected = Object.values(brandsFilter).every(
+        (brand) => !brand
+    )
 
-  console.log(noFilterSelected);
+    console.log(noFilterSelected)
 
-  if (noFilterSelected) return products;
+    if (noFilterSelected) return products
 
-  for (let brand in brandsFilter) {
-    let filteredProductsByBrand = [];
-    if (brandsFilter[brand]) {
-      filteredProductsByBrand = products.filter(
-        (product) => product.brand === brand
-      );
+    for (let brand in brandsFilter) {
+        let filteredProductsByBrand = []
+        if (brandsFilter[brand]) {
+            filteredProductsByBrand = products.filter(
+                (product) => product.brand === brand
+            )
+        }
+
+        filterProducts = [...filterProducts, ...filteredProductsByBrand]
     }
 
-    filterProducts = [...filterProducts, ...filteredProductsByBrand];
-  }
+    return filterProducts
+}
 
-  return filterProducts;
-};
+export const filterByRatings = (products, ratingsLessThan) => {
+    console.log(ratingsLessThan)
+    return products.filter((product) => product.totalStars <= ratingsLessThan)
+}

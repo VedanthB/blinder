@@ -1,63 +1,71 @@
-import { useContext, createContext, useReducer } from "react";
-import { filterByBrands, filterByCategory } from "../../utils/filterProducts";
-import { sortProducts } from "../../utils/sortProducts";
-import { filterReducer } from "../reducers/filterReducer";
-import { useProducts } from "./ProductProvider";
+import { useContext, createContext, useReducer } from 'react'
+import {
+    filterByBrands,
+    filterByCategory,
+    filterByRatings,
+} from '../../utils/filterProducts'
+import { sortProducts } from '../../utils/sortProducts'
+import { filterReducer } from '../reducers/filterReducer'
+import { useProducts } from './ProductProvider'
 
-const FiltersContext = createContext();
+const FiltersContext = createContext()
 
 const filtersInitialState = {
-  sortBy: null,
-  categories: {
-    jackets: false,
-    accessories: false,
-    caps: false,
-    skateboards: false,
-  },
-  brands: {
-    vans: false,
-    "urban monkey": false,
-    thrasher: false,
-    "santa cruz": false,
-  },
-  ratingsGreaterThan: 0,
-  priceLessThan: 20000,
-};
+    sortBy: null,
+    categories: {
+        jackets: false,
+        accessories: false,
+        caps: false,
+        skateboards: false,
+    },
+    brands: {
+        vans: false,
+        'urban monkey': false,
+        thrasher: false,
+        'santa cruz': false,
+    },
+    ratingsLessThan: 5,
+}
 
 export const FiltersProvider = ({ children }) => {
-  const [filtersState, filtersDispatch] = useReducer(
-    filterReducer,
-    filtersInitialState
-  );
+    const [filtersState, filtersDispatch] = useReducer(
+        filterReducer,
+        filtersInitialState
+    )
 
-  const {
-    state: { products },
-  } = useProducts();
+    const {
+        state: { products },
+    } = useProducts()
 
-  let filteredByCategoryProductsList = filterByCategory(
-    products,
-    filtersState.categories
-  );
+    let filteredByCategoryProductsList = filterByCategory(
+        products,
+        filtersState.categories
+    )
 
-  let filteredByBrandProductsList = filterByBrands(
-    filteredByCategoryProductsList,
-    filtersState.brands
-  );
+    let filteredByBrandProductsList = filterByBrands(
+        filteredByCategoryProductsList,
+        filtersState.brands
+    )
 
-  let sortedFilteredList = sortProducts(
-    filteredByBrandProductsList,
-    filtersState.sortBy
-  );
+    let filteredByRatingsProductList = filterByRatings(
+        filteredByBrandProductsList,
+        filtersState.ratingsLessThan
+    )
 
-  console.log(sortedFilteredList);
+    let sortedFilteredList = sortProducts(
+        filteredByRatingsProductList,
+        filtersState.sortBy
+    )
 
-  return (
-    <FiltersContext.Provider
-      value={{ filtersState, filtersDispatch, sortedFilteredList }}
-    >
-      {children}
-    </FiltersContext.Provider>
-  );
-};
+    console.log(sortedFilteredList)
 
-export const useFilters = () => useContext(FiltersContext);
+    return (
+        <FiltersContext.Provider
+            value={{ filtersState, filtersDispatch, sortedFilteredList }}
+        >
+            {children}
+        </FiltersContext.Provider>
+    )
+}
+
+export const useFilters = () => useContext(FiltersContext)
