@@ -1,7 +1,5 @@
 import "./App.css";
 
-import { useEffect } from "react";
-
 import { Routes, Route } from "react-router-dom";
 
 import Mockman from "mockman-js";
@@ -41,13 +39,13 @@ function App() {
 
       {/* routes */}
       <Routes>
-        <Route path="/mockman" element={<Mockman />} />
         <Route path="/" element={<Home />} />
         <Route path="/shop" element={<Shop />} />
         <Route path="/cart" element={<Cart />} />
         <Route path="/wishlist" element={<Wishlist />} />
         <Route path="/login" element={<Login />} />
         <Route path="/signup" element={<Signup />} />
+        <Route path="/mockman" element={<Mockman />} />
       </Routes>
 
       {/* footer */}
