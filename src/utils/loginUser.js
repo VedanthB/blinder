@@ -17,6 +17,8 @@ export const loginUser = async (userData, authDispatch, callback) => {
                 payload: { foundUser, encodedToken },
             })
 
+            localStorage.setItem('blinder_JWT_Token', encodedToken)
+
             callback('/')
         }
     } catch (error) {

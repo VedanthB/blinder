@@ -1,4 +1,4 @@
-export const cartConstants = {
+export const cartActions = {
     LOADING: 'LOADING',
     ERROR: 'ERROR',
     GET_CART_ITEMS: 'GET_CART_ITEMS',
