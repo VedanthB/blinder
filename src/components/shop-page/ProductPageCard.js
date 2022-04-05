@@ -1,57 +1,61 @@
-import React from "react";
+import React from 'react'
 
 function ProductPageCard({ product }) {
-  return (
-    <div className="bg-regal-blue-dark rounded shadow-lg h-min">
-      <div className="h-full  flex flex-col">
-        <div className="badge-container">
-          {product.offers.newArrival && (
-            <span className="absolute font-bold card-badge badge bg-rose-500 text-white">
-              New
-            </span>
-          )}
+    return (
+        <div className="bg-regal-blue-dark rounded shadow-lg h-min">
+            <div className="h-full  flex flex-col">
+                <div className="badge-container">
+                    {product.offers.newArrival && (
+                        <span className="absolute font-bold card-badge badge bg-rose-500 text-white">
+                            New
+                        </span>
+                    )}
 
-          <div className="p-5">
-            <img
-              className="img-responsive w-full"
-              src={product.img}
-              alt={product.title}
-              style={{ maxHeight: "300px" }}
-            />
-          </div>
-        </div>
+                    <div className="p-5">
+                        <img
+                            className="img-responsive w-full"
+                            src={product.img}
+                            alt={product.title}
+                            style={{
+                                height: '300px',
+                                width: '100%',
+                                objectFit: 'cover',
+                            }}
+                        />
+                    </div>
+                </div>
 
-        <div className="p-5">
-          <h4 className="h4 font-normal text-lg subtitle1">
-            <div className="text-white">{product.title}</div>
-          </h4>
+                <div className="p-5">
+                    <h4 className="h4 font-normal text-lg subtitle1">
+                        <div className="text-white">{product.title}</div>
+                    </h4>
 
-          <p className="body1 text-sm font-light mb-4 text-white">
-            {product.desc}
-          </p>
+                    <p className="body1 text-sm font-light mb-4 text-white">
+                        {product.desc}
+                    </p>
 
-          <hr className="mb-3 text-regal-blue" />
+                    <hr className="mb-3 text-regal-blue" />
 
-          <div className="flex justify-between">
-            <div className="product-price text-cyan-500">
-              <small className="line-through mr-2 text-white">
-                {product.price}
-              </small>
-              {product.discountPrice}
+                    <div className="flex justify-between">
+                        <div className="product-price text-cyan-500">
+                            <small className="line-through mr-2 text-white">
+                                {product.price}
+                            </small>
+                            {product.discountPrice}
+                        </div>
+                        <div className="flex">
+                            <div>
+                                <i className="fa fa-heart mr-3 text-grey-400 text-hover-cyan-500"></i>
+                            </div>
+                            <div>
+                                <i className="fa fa-shopping-cart text-grey-400 text-hover-cyan-500"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
-            <div className="flex">
-              <div>
-                <i className="fa fa-heart mr-3 text-grey-400 text-hover-cyan-500"></i>
-              </div>
-              <div>
-                <i className="fa fa-shopping-cart text-grey-400 text-hover-cyan-500"></i>
-              </div>
-            </div>
-          </div>
         </div>
-      </div>
-    </div>
-  );
+    )
 }
 
-export default ProductPageCard;
+export default ProductPageCard
