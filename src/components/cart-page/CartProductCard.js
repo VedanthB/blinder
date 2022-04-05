@@ -1,7 +1,20 @@
 import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
+import { cartActions } from '../../context/constants/cartConstants'
+import { useAuth } from '../../context/providers/AuthProvider'
+import { useCart } from '../../context/providers/CartProvider'
+import {
+    decrementCartItem,
+    incrementCartItem,
+} from '../../utils/updateCartItem'
 
 function CartProductCard({ product }) {
+    const { cartDispatch } = useCart()
+
+    const {
+        authState: { encodedToken },
+    } = useAuth()
+
     return (
         <div className="bg-regal-blue-dark rounded shadow-lg h-min">
             <div className="h-full  flex flex-col">
@@ -42,21 +55,33 @@ function CartProductCard({ product }) {
                                 background: 'transparent',
                                 border: 'none',
                             }}
+                            onClick={() =>
+                                decrementCartItem(
+                                    product._id,
+                                    encodedToken,
+                                    cartDispatch
+                                )
+                            }
                             className="text-2xl text-white cursor-pointer mr-3"
                         >
                             -
                         </button>
-
                         <p className="text-2xl text-cyan-500 mr-3">
                             {product.qty}
                         </p>
-
                         <button
                             style={{
                                 background: 'transparent',
                                 border: 'none',
                             }}
                             className="text-2xl text-white cursor-pointer"
+                            onClick={() =>
+                                incrementCartItem(
+                                    product._id,
+                                    encodedToken,
+                                    cartDispatch
+                                )
+                            }
                         >
                             +
                         </button>
