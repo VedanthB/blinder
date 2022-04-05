@@ -1,4 +1,5 @@
-import { useContext, createContext, useReducer } from 'react'
+import { useContext, createContext, useReducer, useEffect } from 'react'
+import { authConstants } from '../constants/authConstants'
 import { authReducer } from '../reducers/authReducer'
 
 const AuthContext = createContext()
@@ -13,7 +14,16 @@ const authInitState = {
 export const AuthProvider = ({ children }) => {
     const [authState, authDispatch] = useReducer(authReducer, authInitState)
 
-    console.log(authState)
+    useEffect(() => {
+        let encodedToken = localStorage.getItem('blinder_JWT_Token')
+
+        if (encodedToken) {
+            authDispatch({
+                type: authConstants.LOGIN_SUCCESS,
+                payload: { user: {}, encodedToken },
+            })
+        }
+    }, [])
 
     return (
         <AuthContext.Provider value={{ authState, authDispatch }}>
