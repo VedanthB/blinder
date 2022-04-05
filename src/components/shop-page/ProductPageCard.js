@@ -3,6 +3,7 @@ import { useCart } from '../../context/providers/CartProvider'
 import { useAuth } from '../../context/providers/AuthProvider'
 import { postCartItem } from '../../utils/postCartItem'
 import { Link } from 'react-router-dom'
+import { getWishListItems } from '../../utils/getWishlistItems'
 
 function ProductPageCard({ product }) {
     const { cartState, cartDispatch } = useCart()
@@ -59,7 +60,16 @@ function ProductPageCard({ product }) {
                             {product.discountPrice}
                         </div>
                         <div className="flex">
-                            <div className="tooltip cursor-pointer">
+                            <div
+                                className="tooltip cursor-pointer"
+                                // onClick={() =>
+                                //     getWishListItems(
+                                //         product,
+                                //         encodedToken,
+                                //         cartDispatch
+                                //     )
+                                // }
+                            >
                                 <i className="fa fa-heart mr-3 text-xl text-grey-400 text-hover-cyan-500"></i>
                                 <span
                                     style={{ textTransform: 'none' }}
@@ -68,6 +78,7 @@ function ProductPageCard({ product }) {
                                     add to wishlist
                                 </span>
                             </div>
+                            getWishListItems
                             {isInCart ? (
                                 <Link
                                     className="tooltip cursor-pointer"
