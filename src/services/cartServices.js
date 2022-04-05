@@ -39,3 +39,9 @@ export const decrementCartItemService = (token, itemId) => {
         }
     )
 }
+
+export const deleteCartItemService = (token, itemId) => {
+    return axios.delete(`/api/user/cart/${itemId}`, {
+        headers: { authorization: token },
+    })
+}

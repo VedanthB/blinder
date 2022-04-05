@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom'
 import { cartActions } from '../../context/constants/cartConstants'
 import { useAuth } from '../../context/providers/AuthProvider'
 import { useCart } from '../../context/providers/CartProvider'
+import { deleteCartItem } from '../../utils/deleteCartItem'
 import {
     decrementCartItem,
     incrementCartItem,
@@ -37,6 +38,13 @@ function CartProductCard({ product }) {
                         style={{
                             backgroundColor: 'rgba(255, 255, 255, 0.596)',
                         }}
+                        onClick={() =>
+                            deleteCartItem(
+                                product._id,
+                                encodedToken,
+                                cartDispatch
+                            )
+                        }
                         className="btn-close bg-blue-500 text-blue-500"
                     ></button>
                 </div>

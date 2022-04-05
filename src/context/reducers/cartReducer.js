@@ -14,7 +14,7 @@ export const cartReducer = (state, action) => {
         case cartActions.POST_CART_ITEMS:
             return { ...state, cart: action.payload, loading: false }
 
-        case cartActions.POST_CART_ITEMS:
+        case cartActions.DELETE_CART_ITEMS:
             return { ...state, cart: action.payload, loading: false }
 
         default:
