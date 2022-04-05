@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 import { useAuth } from '../../context/providers/AuthProvider'
 import { signupUser } from '../../utils/signupUser'
 
@@ -15,7 +15,7 @@ function SignupCard() {
 
     const { authDispatch } = useAuth()
 
-    console.log(userData)
+    const navigate = useNavigate()
 
     const handleChange = (e) => {
         const { name, value } = e.target
@@ -164,7 +164,8 @@ function SignupCard() {
                             email: 'johndoe@gmail.com',
                             password: '123456',
                         },
-                        authDispatch
+                        authDispatch,
+                        navigate
                     )
                 }}
             >
@@ -172,7 +173,7 @@ function SignupCard() {
             </button>
 
             <button
-                onClick={() => signupUser(userData, authDispatch)}
+                onClick={() => signupUser(userData, authDispatch, navigate)}
                 className="btn btn-solid-cyan justify-center w-full text-white"
             >
                 Sign Up

@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 import { useAuth } from '../../context/providers/AuthProvider'
 import { loginUser } from '../../utils/loginUser'
 
@@ -12,6 +12,8 @@ function LoginCard() {
     const [userData, setUserData] = useState(initLoginState)
 
     const { authDispatch } = useAuth()
+
+    const navigate = useNavigate()
 
     const handleChange = (e) => {
         const { name, value } = e.target
@@ -103,7 +105,8 @@ function LoginCard() {
                             email: 'johndoe@gmail.com',
                             password: '123456',
                         },
-                        authDispatch
+                        authDispatch,
+                        navigate
                     )
                 }}
             >
@@ -115,7 +118,7 @@ function LoginCard() {
                 className="btn btn-solid-cyan justify-center w-full text-white"
                 onClick={(e) => {
                     e.preventDefault()
-                    loginUser(userData, authDispatch)
+                    loginUser(userData, authDispatch, navigate)
                 }}
             >
                 Login

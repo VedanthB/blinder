@@ -2,7 +2,7 @@ import axios from 'axios'
 import { authConstants } from '../context/constants/authConstants'
 import { loginService } from '../services/loginService'
 
-export const loginUser = async (userData, authDispatch) => {
+export const loginUser = async (userData, authDispatch, callback) => {
     try {
         authDispatch({ type: authConstants.LOADING })
 
@@ -16,6 +16,8 @@ export const loginUser = async (userData, authDispatch) => {
                 type: authConstants.LOGIN_SUCCESS,
                 payload: { foundUser, encodedToken },
             })
+
+            callback('/')
         }
     } catch (error) {
         authDispatch({
