@@ -5,3 +5,13 @@ export const getCartItemsService = (token) => {
         headers: { authorization: token },
     })
 }
+
+export const postCartItemService = (token, item) => {
+    return axios.post(
+        '/api/user/cart',
+        { product: item },
+        {
+            headers: { authorization: token },
+        }
+    )
+}
