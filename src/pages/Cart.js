@@ -2,19 +2,13 @@ import React from 'react'
 import AddressCard from '../components/cart-page/AddressCard'
 import CartProductCard from '../components/cart-page/CartProductCard'
 import CheckoutCard from '../components/cart-page/CheckoutCard'
-
-const product = {
-    newArrival: true,
-    image: 'https://picsum.photos/500',
-    title: 'Some Title',
-    description:
-        'lorem ipsum dolor sit lorem ipsum dolor sitlorem ipsum dolor sitlorem ipsum dolor sitlorem ipsum dolor sit',
-    actualPrice: 1000,
-    discountedPrice: 900,
-    qty: 1,
-}
+import { useCart } from '../context/providers/CartProvider'
 
 function Cart() {
+    const {
+        cartState: { cart },
+    } = useCart()
+
     return (
         <main
             style={{ top: '5rem', minHeight: '100vh' }}
@@ -24,7 +18,7 @@ function Cart() {
             <div class="spacer-3rem"></div>
 
             <h3 class="text-4xl font-normal text-center text-white mb-2 underline">
-                My Cart (2)
+                My Cart {cart.length}
             </h3>
 
             <div class="spacer-3rem"></div>
@@ -41,8 +35,9 @@ function Cart() {
                     <AddressCard />
 
                     <div style={{ gap: '3rem' }} class="flex flex-col">
-                        <CartProductCard product={product} />
-                        <CartProductCard product={product} />
+                        {cart.map((product, i) => (
+                            <CartProductCard product={product} key={i} />
+                        ))}
                     </div>
                 </div>
 

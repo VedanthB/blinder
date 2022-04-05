@@ -2,10 +2,15 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 import { authConstants } from '../../../context/constants/authConstants'
 import { useAuth } from '../../../context/providers/AuthProvider'
+import { useCart } from '../../../context/providers/CartProvider'
 
 function HeaderRight() {
     const { authState, authDispatch } = useAuth()
     const { encodedToken } = authState
+
+    const {
+        cartState: { cart },
+    } = useCart()
 
     return (
         <nav className="flex justify-center align-items-center">
@@ -53,7 +58,7 @@ function HeaderRight() {
                     <span className="btn-icon badge-container">
                         <i className="text-cyan-500 fas fa-shopping-cart"></i>
                         <span className="status-badge bg-cyan-500 status-badge-number">
-                            0
+                            {cart.length}
                         </span>
                     </span>
                     <span
