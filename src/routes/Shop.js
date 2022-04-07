@@ -2,8 +2,13 @@ import React from "react";
 import FiltersSideBar from "../components/shop-page/FiltersSideBar";
 import ProductPageCard from "../components/shop-page/ProductPageCard";
 import SortProductsDropdown from "../components/shop-page/SortProductsDropdown";
+import { useProducts } from "../context/providers/ProductProvider";
 
 function Shop() {
+  const { state } = useProducts();
+
+  const { products } = state;
+
   return (
     <main
       style={{ top: "5rem", minHeight: "180vh" }}
@@ -17,13 +22,9 @@ function Shop() {
         </div>
 
         <div style={{ gap: "4rem" }} className="grid grid-cols-3">
-          {/* <ProductCard product={{}} />
-          <ProductCard />
-          <ProductCard />
-          <ProductCard />
-          <ProductCard />
-          <ProductCard />
-          <ProductCard /> */}
+          {products.map((product) => (
+            <ProductPageCard product={product} />
+          ))}
         </div>
 
         <div className="spacer-3rem"></div>

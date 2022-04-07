@@ -5,34 +5,38 @@ function ProductPageCard({ product }) {
     <div className="bg-regal-blue-dark rounded shadow-lg h-min">
       <div className="h-full  flex flex-col">
         <div className="badge-container">
-          {product.newArrival ? (
+          {product.offers.newArrival && (
             <span className="absolute font-bold card-badge badge bg-rose-500 text-white">
               New
             </span>
-          ) : (
-            ""
           )}
-          <span className="absolute font-bold card-badge badge bg-rose-500 text-white">
-            New
-          </span>
+
           <div className="p-5">
-            <img className="img-responsive" src={product.productImage} alt="" />
+            <img
+              className="img-responsive"
+              src={product.img}
+              alt={product.title}
+            />
           </div>
         </div>
+
         <div className="p-5">
           <h4 className="h4 font-normal text-lg subtitle1">
-            <div className="text-white">{product.productPrice}</div>
+            <div className="text-white">{product.title}</div>
           </h4>
+
           <p className="body1 text-sm font-light mb-4 text-white">
-            {product.productDescription}
+            {product.desc}
           </p>
+
           <hr className="mb-3 text-regal-blue" />
+
           <div className="flex justify-between">
             <div className="product-price text-cyan-500">
               <small className="line-through mr-2 text-white">
-                {product.actualPrice}
+                {product.price}
               </small>
-              {product.discountedPrice}
+              {product.discountPrice}
             </div>
             <div className="flex">
               <div>

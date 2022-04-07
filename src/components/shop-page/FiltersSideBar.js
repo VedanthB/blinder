@@ -1,6 +1,26 @@
-import React from "react";
+import React, { useState, useReducer } from "react";
+
+const reducerFunc = (state, action) => {
+  switch (action.type) {
+    case "FILTER_BY_JACKETS":
+      return {
+        ...state,
+        jacketsChecked: !state.jacketsChecked,
+      };
+
+    default:
+      break;
+  }
+};
 
 function FiltersSidebar() {
+  const [state, dispatch] = useReducer(reducerFunc, {
+    jacketsChecked: false,
+    capsChecked: false,
+  });
+
+  console.log(state.jacketsChecked);
+
   return (
     <div
       style={{ top: "8rem" }}
@@ -21,7 +41,12 @@ function FiltersSidebar() {
         <li className="text-white pt-3 pb-3 text-lg">Categories</li>
         <li className="pt-3 pb-3">
           <label className="text-white text-lg">
-            <input type="checkbox" value={""} className="mr-3" />
+            <input
+              type="checkbox"
+              value={state.jacketsChecked}
+              onClick={() => dispatch({ type: "FILTER_BY_JACKETS" })}
+              className="mr-3"
+            />
             Jackets
           </label>
         </li>

@@ -1,5 +1,7 @@
 @import url("https://argon-css.netlify.app/components/index.css");
 @import url("https://fonts.googleapis.com/css2?family=Fruktur&display=swap");
+@import "https://unpkg.com/mockman-js@latest/dist/style.css";
+@import "react-toastify/dist/ReactToastify.css";
 
 :root {
   --regal-blue: #2a2840;
