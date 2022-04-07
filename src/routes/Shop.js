@@ -1,27 +1,20 @@
 import React, { useState, useEffect } from "react";
+import FiltersSidebar from "../components/shop-page/filters/FiltersSideBar";
 
-import FiltersSideBar from "../components/shop-page/FiltersSideBar";
 import ProductPageCard from "../components/shop-page/ProductPageCard";
 import SortProductsDropdown from "../components/shop-page/SortProductsDropdown";
 import { useFilters } from "../context/providers/FilterProvider";
 import { useProducts } from "../context/providers/ProductProvider";
-import { sortProducts } from "../utils/sortProducts";
 
 function Shop() {
-  const { state } = useProducts();
-
-  const { products } = state;
-
-  const { sortedProductsList } = useFilters();
-
-  console.log(sortedProductsList);
+  const { sortedFilteredList } = useFilters();
 
   return (
     <main
       style={{ top: "5rem", minHeight: "180vh" }}
       className="relative w-full justify-end flex"
     >
-      <FiltersSideBar />
+      <FiltersSidebar />
 
       <div className="products-display-container">
         <div className="flex w-full justify-end">
@@ -29,7 +22,7 @@ function Shop() {
         </div>
 
         <div style={{ gap: "4rem" }} className="grid grid-cols-3">
-          {sortedProductsList.map((product, i) => (
+          {sortedFilteredList.map((product, i) => (
             <ProductPageCard product={product} key={i} />
           ))}
         </div>

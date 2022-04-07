@@ -1,4 +1,4 @@
-import { filtersConstants } from "../constants/filtersConstants";
+import { filtersConstants } from '../constants/filtersConstants'
 
 // sortBy: null,
 // categories: {
@@ -17,39 +17,35 @@ import { filtersConstants } from "../constants/filtersConstants";
 // priceLessThan: 20000,
 
 export const filterReducer = (state, action) => {
-  const { type, payload } = action;
+    const { type, payload } = action
 
-  switch (type) {
-    case filtersConstants.FILTER_BY_BRAND:
-      return {
-        ...state,
-        brands: { ...state.brands, [payload]: !state.brands[payload] },
-      };
-    case filtersConstants.FILTER_BY_CATEGORY:
-      return {
-        ...state,
-        categories: {
-          ...state.categories,
-          [payload]: !state.categories[payload],
-        },
-      };
-    case filtersConstants.FILTER_BY_RATING:
-      return {
-        ...state,
-        ratingsGreaterThan: payload,
-      };
-    case filtersConstants.FILTER_BY_RATING:
-      return {
-        ...state,
-        priceLessThan: payload,
-      };
-    case filtersConstants.SORT_BY:
-      return {
-        ...state,
-        sortBy: payload,
-      };
+    switch (type) {
+        case filtersConstants.FILTER_BY_BRAND:
+            return {
+                ...state,
+                brands: { ...state.brands, [payload]: !state.brands[payload] },
+            }
+        case filtersConstants.FILTER_BY_CATEGORY:
+            return {
+                ...state,
+                categories: {
+                    ...state.categories,
+                    [payload]: !state.categories[payload],
+                },
+            }
+        case filtersConstants.FILTER_BY_RATING:
+            return {
+                ...state,
+                ratingsLessThan: payload,
+            }
 
-    default:
-      return state;
-  }
-};
+        case filtersConstants.SORT_BY:
+            return {
+                ...state,
+                sortBy: payload,
+            }
+
+        default:
+            return state
+    }
+}
