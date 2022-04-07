@@ -1,13 +1,20 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
+
 import FiltersSideBar from "../components/shop-page/FiltersSideBar";
 import ProductPageCard from "../components/shop-page/ProductPageCard";
 import SortProductsDropdown from "../components/shop-page/SortProductsDropdown";
+import { useFilters } from "../context/providers/FilterProvider";
 import { useProducts } from "../context/providers/ProductProvider";
+import { sortProducts } from "../utils/sortProducts";
 
 function Shop() {
   const { state } = useProducts();
 
   const { products } = state;
+
+  const { sortedProductsList } = useFilters();
+
+  console.log(sortedProductsList);
 
   return (
     <main
@@ -22,8 +29,8 @@ function Shop() {
         </div>
 
         <div style={{ gap: "4rem" }} className="grid grid-cols-3">
-          {products.map((product) => (
-            <ProductPageCard product={product} />
+          {sortedProductsList.map((product, i) => (
+            <ProductPageCard product={product} key={i} />
           ))}
         </div>
 

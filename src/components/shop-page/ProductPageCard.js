@@ -13,9 +13,10 @@ function ProductPageCard({ product }) {
 
           <div className="p-5">
             <img
-              className="img-responsive"
+              className="img-responsive w-full"
               src={product.img}
               alt={product.title}
+              style={{ maxHeight: "300px" }}
             />
           </div>
         </div>
