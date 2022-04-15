@@ -10,6 +10,7 @@ import { ProductProvider } from './context/providers/ProductProvider'
 import { FiltersProvider } from './context/providers/FilterProvider'
 import { AuthProvider } from './context/providers/AuthProvider'
 import { CartProvider } from './context/providers/CartProvider'
+import { WishlistProvider } from './context/providers/WishlistProvider'
 
 // Call make Server
 makeServer()
@@ -20,9 +21,11 @@ ReactDOM.render(
             <AuthProvider>
                 <ProductProvider>
                     <CartProvider>
-                        <FiltersProvider>
-                            <App />
-                        </FiltersProvider>
+                        <WishlistProvider>
+                            <FiltersProvider>
+                                <App />
+                            </FiltersProvider>
+                        </WishlistProvider>
                     </CartProvider>
                 </ProductProvider>
             </AuthProvider>

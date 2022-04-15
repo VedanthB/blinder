@@ -3,6 +3,8 @@ import { Link } from 'react-router-dom'
 import { cartActions } from '../../context/constants/cartConstants'
 import { useAuth } from '../../context/providers/AuthProvider'
 import { useCart } from '../../context/providers/CartProvider'
+import { useWishlist } from '../../context/providers/WishlistProvider'
+import { addWishlistItem } from '../../utils/addWishlistItem'
 import { deleteCartItem } from '../../utils/deleteCartItem'
 import {
     decrementCartItem,
@@ -11,10 +13,16 @@ import {
 
 function CartProductCard({ product }) {
     const { cartDispatch } = useCart()
+    const {
+        wishlistState: { wishlist },
+        wishlistDispatch,
+    } = useWishlist()
 
     const {
         authState: { encodedToken },
     } = useAuth()
+
+    const isInWishlist = wishlist.find((item) => item._id === product._id)
 
     return (
         <div className="bg-regal-blue-dark rounded shadow-lg h-min">
@@ -106,18 +114,39 @@ function CartProductCard({ product }) {
                         </div>
 
                         <div className="flex">
-                            <Link
-                                className="tooltip cursor-pointer"
-                                to="/wishlist"
-                            >
-                                <i className="fa fa-heart text-xl text-grey-400 text-hover-cyan-500"></i>
-                                <span
-                                    style={{ textTransform: 'none' }}
-                                    className="tooltip-text shadow-lg"
+                            {isInWishlist ? (
+                                <Link
+                                    className="tooltip cursor-pointer"
+                                    to="/wishlist"
                                 >
-                                    add to wishlist
-                                </span>
-                            </Link>
+                                    <i className="fa fa-heart  mr-3 text-xl text-cyan-500"></i>
+                                    <span
+                                        style={{ textTransform: 'none' }}
+                                        className="tooltip-text shadow-lg"
+                                    >
+                                        go to wishlist
+                                    </span>
+                                </Link>
+                            ) : (
+                                <div
+                                    className="tooltip cursor-pointer"
+                                    onClick={() =>
+                                        addWishlistItem(
+                                            product,
+                                            encodedToken,
+                                            wishlistDispatch
+                                        )
+                                    }
+                                >
+                                    <i className="fa fa-heart mr-3 text-xl text-grey-400 text-hover-cyan-500"></i>
+                                    <span
+                                        style={{ textTransform: 'none' }}
+                                        className="tooltip-text shadow-lg"
+                                    >
+                                        add to wishlist
+                                    </span>
+                                </div>
+                            )}
                         </div>
                     </div>
                 </div>
