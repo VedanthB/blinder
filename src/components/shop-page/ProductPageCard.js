@@ -1,6 +1,21 @@
 import React from 'react'
+import { useCart } from '../../context/providers/CartProvider'
+import { useAuth } from '../../context/providers/AuthProvider'
+import { postCartItem } from '../../utils/postCartItem'
+import { Link } from 'react-router-dom'
 
 function ProductPageCard({ product }) {
+    const { cartState, cartDispatch } = useCart()
+    const { authState } = useAuth()
+
+    const { cart } = cartState
+
+    const isInCart = cart.find((item) => item._id === product._id)
+
+    console.log(isInCart)
+
+    const { encodedToken } = authState
+
     return (
         <div className="bg-regal-blue-dark rounded shadow-lg h-min">
             <div className="h-full  flex flex-col">
@@ -44,12 +59,48 @@ function ProductPageCard({ product }) {
                             {product.discountPrice}
                         </div>
                         <div className="flex">
-                            <div>
-                                <i className="fa fa-heart mr-3 text-grey-400 text-hover-cyan-500"></i>
+                            <div className="tooltip cursor-pointer">
+                                <i className="fa fa-heart mr-3 text-xl text-grey-400 text-hover-cyan-500"></i>
+                                <span
+                                    style={{ textTransform: 'none' }}
+                                    className="tooltip-text shadow-lg"
+                                >
+                                    add to wishlist
+                                </span>
                             </div>
-                            <div>
-                                <i className="fa fa-shopping-cart text-grey-400 text-hover-cyan-500"></i>
-                            </div>
+                            {isInCart ? (
+                                <Link
+                                    className="tooltip cursor-pointer"
+                                    to="/cart"
+                                >
+                                    <i className="fa fa-shopping-cart text-xl ] text-cyan-500"></i>
+                                    <span
+                                        style={{ textTransform: 'none' }}
+                                        className="tooltip-text shadow-lg"
+                                    >
+                                        go to cart
+                                    </span>
+                                </Link>
+                            ) : (
+                                <div
+                                    className="tooltip cursor-pointer"
+                                    onClick={() =>
+                                        postCartItem(
+                                            product,
+                                            encodedToken,
+                                            cartDispatch
+                                        )
+                                    }
+                                >
+                                    <i className="fa fa-shopping-cart text-xl text-grey-400 text-hover-cyan-500"></i>
+                                    <span
+                                        style={{ textTransform: 'none' }}
+                                        className="tooltip-text shadow-lg"
+                                    >
+                                        add to cart
+                                    </span>
+                                </div>
+                            )}
                         </div>
                     </div>
                 </div>

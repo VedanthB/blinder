@@ -17,9 +17,12 @@ function WebsitesRoutes() {
         <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/shop" element={<Shop />} />
+
+            <Route path="/mockman" element={<Mockman />} />
+
             <Route path="/login" element={<Login />} />
             <Route path="/signup" element={<Signup />} />
-            <Route path="/mockman" element={<Mockman />} />
+
             <Route path="/" element={<Home />} />
             <Route path="/" element={<PrivateRoutes />}>
                 <Route path="/cart" element={<Cart />} />
