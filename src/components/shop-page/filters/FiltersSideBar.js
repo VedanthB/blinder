@@ -1,5 +1,6 @@
 import React from 'react'
-import FilterByBrands from './FilterByBrands'
+
+import { FilterByBrands } from './FilterByBrands'
 
 import FilterByCategories from './FilterByCategories'
 import FilterByRatings from './FilterByRatings'

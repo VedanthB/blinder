@@ -5,7 +5,7 @@ import FilterListItem from './FilterListItem'
 
 const brands = ['Santa Cruz', 'Vans', 'Urban Monkey', 'Thrasher']
 
-function FilterByBrands() {
+export const FilterByBrands = () => {
     const { filtersState, filtersDispatch } = useFilters()
 
     return (
@@ -27,5 +27,3 @@ function FilterByBrands() {
         </ul>
     )
 }
-
-export default FilterByBrands
