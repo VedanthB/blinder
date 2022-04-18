@@ -4,7 +4,7 @@ import FilterByBrands from './FilterByBrands'
 import FilterByCategories from './FilterByCategories'
 import FilterByRatings from './FilterByRatings'
 
-function FiltersSidebar() {
+function FiltersSideBar() {
     return (
         <div
             style={{ top: '8rem' }}
@@ -38,4 +38,4 @@ function FiltersSidebar() {
     )
 }
 
-export default FiltersSidebar
+export default FiltersSideBar
