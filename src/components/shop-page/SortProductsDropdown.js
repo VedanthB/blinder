@@ -4,7 +4,7 @@ import { useFilters } from '../../context/providers/FilterProvider'
 function SortProductsDropdown() {
     const [selectedSort, setSelectedSort] = useState('default')
 
-    const { filtersState, filtersDispatch } = useFilters()
+    const { filtersDispatch } = useFilters()
 
     useEffect(() => {
         filtersDispatch({ type: 'SORT_BY', payload: selectedSort })

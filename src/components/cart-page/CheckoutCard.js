@@ -7,10 +7,6 @@ function CheckoutCard() {
         cartState: { cart },
     } = useCart()
 
-    const {
-        authState: { encodedToken },
-    } = useAuth()
-
     const deliveryCharges = 199
 
     const totalPreviousPrice = cart.reduce(

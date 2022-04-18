@@ -4,7 +4,12 @@ import {
     incrementCartItemService,
 } from '../services/cartServices'
 
-export const incrementCartItem = async (itemId, encodedToken, cartDispatch) => {
+export const incrementCartItem = async (
+    itemId,
+    encodedToken,
+    cartDispatch,
+    showToast
+) => {
     try {
         cartDispatch({ type: cartActions.LOADING })
 
@@ -16,14 +21,21 @@ export const incrementCartItem = async (itemId, encodedToken, cartDispatch) => {
         if (status >= 200 && status < 300) {
             cartDispatch({ type: cartActions.GET_CART_ITEMS, payload: cart })
 
-            console.log(status, cart)
+            showToast('Increment cart qty Success', 'success')
         }
     } catch (error) {
-        console.log(error)
+        cartDispatch({ type: cartActions.ERROR, payload: error })
+
+        showToast(`${error}`, 'error')
     }
 }
 
-export const decrementCartItem = async (itemId, encodedToken, cartDispatch) => {
+export const decrementCartItem = async (
+    itemId,
+    encodedToken,
+    cartDispatch,
+    showToast
+) => {
     try {
         cartDispatch({ type: cartActions.LOADING })
 
@@ -35,9 +47,11 @@ export const decrementCartItem = async (itemId, encodedToken, cartDispatch) => {
         if (status >= 200 && status < 300) {
             cartDispatch({ type: cartActions.GET_CART_ITEMS, payload: cart })
 
-            console.log(status, cart)
+            showToast('Decrement cart qty Success', 'success')
         }
     } catch (error) {
-        console.log(error)
+        cartDispatch({ type: cartActions.ERROR, payload: error })
+
+        showToast(`${error}`, 'error')
     }
 }

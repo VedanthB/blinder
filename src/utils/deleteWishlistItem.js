@@ -1,7 +1,12 @@
 import { wishlistActions } from '../context/constants/wishlistConstants'
 import { deleteWishlistItemService } from '../services/wishlistService'
 
-export const deleteWishlistItem = async (item, token, wishlistDispatch) => {
+export const deleteWishlistItem = async (
+    item,
+    token,
+    wishlistDispatch,
+    showToast
+) => {
     try {
         wishlistDispatch({ type: wishlistActions.LOADING })
 
@@ -15,8 +20,12 @@ export const deleteWishlistItem = async (item, token, wishlistDispatch) => {
                 type: wishlistActions.REMOVE_WISHLIST_ITEM,
                 payload: wishlist,
             })
+
+            showToast('Deleted from Wishlist', 'success')
         }
     } catch (error) {
         wishlistDispatch({ type: wishlistActions.ERROR, payload: error })
+
+        showToast(`${error}`, 'error')
     }
 }

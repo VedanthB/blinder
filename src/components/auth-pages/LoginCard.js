@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
 import { useAuth } from '../../context/providers/AuthProvider'
+import { useToast } from '../../hooks/useToast'
 import { loginUser } from '../../utils/loginUser'
 
 const initLoginState = {
@@ -19,6 +20,8 @@ function LoginCard() {
         const { name, value } = e.target
         setUserData({ ...userData, [name]: value })
     }
+
+    const { showToast } = useToast()
 
     return (
         <form
@@ -106,7 +109,8 @@ function LoginCard() {
                             password: '123456',
                         },
                         authDispatch,
-                        navigate
+                        navigate,
+                        showToast
                     )
                 }}
             >
@@ -118,7 +122,7 @@ function LoginCard() {
                 className="btn btn-solid-cyan justify-center w-full text-white"
                 onClick={(e) => {
                     e.preventDefault()
-                    loginUser(userData, authDispatch, navigate)
+                    loginUser(userData, authDispatch, navigate, showToast)
                 }}
             >
                 Login

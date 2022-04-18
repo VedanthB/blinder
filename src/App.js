@@ -1,12 +1,12 @@
-import './App.css'
-
 import Header from './components/global/header/Header'
 import Footer from './components/global/Footer'
 
 /* External Imports */
 
-import { ToastContainer, toast } from 'react-toastify'
+import { ToastContainer } from 'react-toastify'
+
 import 'react-toastify/dist/ReactToastify.css'
+
 import WebsitesRoutes from './routes/WebsiteRoutes'
 
 function App() {
@@ -15,7 +15,7 @@ function App() {
             {/* toast */}
             <ToastContainer
                 position="top-right"
-                autoClose={5000}
+                autoClose={3000}
                 hideProgressBar={false}
                 newestOnTop
                 closeOnClick

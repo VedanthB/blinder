@@ -4,7 +4,7 @@ import { productActions } from '../context/constants/productConstants'
 import { useProducts } from '../context/providers/ProductProvider'
 import { getProductsService } from '../services/productServices'
 
-export const getProducts = async (productsDispatch) => {
+export const getProducts = async (productsDispatch, showToast) => {
     try {
         console.log(productsDispatch)
 
@@ -21,14 +21,14 @@ export const getProducts = async (productsDispatch) => {
                 payload: products,
             })
 
-            console.log(products)
+            showToast('Get all Products!', 'success')
         }
     } catch (error) {
-        console.log(error)
         productsDispatch({
             type: productActions.ERROR,
-            payload:
-                "Oops! Looks like there's an issue with the server, please try again later",
+            payload: error,
         })
+
+        showToast(`${error}`, 'error')
     }
 }

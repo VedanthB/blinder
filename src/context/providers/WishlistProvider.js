@@ -1,7 +1,8 @@
 import { useContext, createContext, useReducer, useEffect } from 'react'
-import { getCartItems } from '../../utils/getCartItems'
+import { useToast } from '../../hooks/useToast'
+
 import { getWishListItems } from '../../utils/getWishlistItems'
-import { cartReducer } from '../reducers/cartReducer'
+
 import { wishlistReducer } from '../reducers/wishlistReducer'
 import { useAuth } from './AuthProvider'
 
@@ -23,13 +24,13 @@ export const WishlistProvider = ({ children }) => {
 
     const { encodedToken } = authState
 
+    const { showToast } = useToast()
+
     useEffect(() => {
         if (encodedToken) {
-            getWishListItems(encodedToken, wishlistDispatch)
+            getWishListItems(encodedToken, wishlistDispatch, showToast)
         }
     }, [encodedToken])
-
-    console.log(wishlistState)
 
     return (
         <WishlistContext.Provider value={{ wishlistState, wishlistDispatch }}>
