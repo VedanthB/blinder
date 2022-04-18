@@ -3,9 +3,9 @@ import { useCart } from '../../context/providers/CartProvider'
 import { useAuth } from '../../context/providers/AuthProvider'
 import { postCartItem } from '../../utils/postCartItem'
 import { Link } from 'react-router-dom'
-import { getWishListItems } from '../../utils/getWishlistItems'
 import { addWishlistItem } from '../../utils/addWishlistItem'
 import { useWishlist } from '../../context/providers/WishlistProvider'
+import { useToast } from '../../hooks/useToast'
 
 function ProductPageCard({ product }) {
     const { cartState, cartDispatch } = useCart()
@@ -24,6 +24,8 @@ function ProductPageCard({ product }) {
     console.log(isInCart, isInWishlist)
 
     const { encodedToken } = authState
+
+    const { showToast } = useToast()
 
     return (
         <div className="bg-regal-blue-dark rounded shadow-lg h-min">
@@ -85,11 +87,17 @@ function ProductPageCard({ product }) {
                                 <div
                                     className="tooltip cursor-pointer"
                                     onClick={() =>
-                                        addWishlistItem(
-                                            product,
-                                            encodedToken,
-                                            wishlistDispatch
-                                        )
+                                        encodedToken
+                                            ? addWishlistItem(
+                                                  product,
+                                                  encodedToken,
+                                                  wishlistDispatch,
+                                                  showToast
+                                              )
+                                            : showToast(
+                                                  'Please Login!',
+                                                  'error'
+                                              )
                                     }
                                 >
                                     <i className="fa fa-heart mr-3 text-xl text-grey-400 text-hover-cyan-500"></i>
@@ -119,11 +127,17 @@ function ProductPageCard({ product }) {
                                 <div
                                     className="tooltip cursor-pointer"
                                     onClick={() =>
-                                        postCartItem(
-                                            product,
-                                            encodedToken,
-                                            cartDispatch
-                                        )
+                                        encodedToken
+                                            ? postCartItem(
+                                                  product,
+                                                  encodedToken,
+                                                  cartDispatch,
+                                                  showToast
+                                              )
+                                            : showToast(
+                                                  'Please Login!',
+                                                  'error'
+                                              )
                                     }
                                 >
                                     <i className="fa fa-shopping-cart text-xl text-grey-400 text-hover-cyan-500"></i>

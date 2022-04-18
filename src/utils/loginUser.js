@@ -2,7 +2,12 @@ import axios from 'axios'
 import { authConstants } from '../context/constants/authConstants'
 import { loginService } from '../services/loginService'
 
-export const loginUser = async (userData, authDispatch, callback) => {
+export const loginUser = async (
+    userData,
+    authDispatch,
+    callback,
+    showToast
+) => {
     try {
         authDispatch({ type: authConstants.LOADING })
 
@@ -20,11 +25,15 @@ export const loginUser = async (userData, authDispatch, callback) => {
             localStorage.setItem('blinder_JWT_Token', encodedToken)
 
             callback('/')
+
+            showToast('Login successful', 'success')
         }
     } catch (error) {
         authDispatch({
             type: authConstants.ERROR,
             payload: error,
         })
+
+        showToast(`${error}`, 'error')
     }
 }

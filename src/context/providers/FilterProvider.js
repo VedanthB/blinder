@@ -57,8 +57,6 @@ export const FiltersProvider = ({ children }) => {
         filtersState.sortBy
     )
 
-    console.log(sortedFilteredList)
-
     return (
         <FiltersContext.Provider
             value={{ filtersState, filtersDispatch, sortedFilteredList }}

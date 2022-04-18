@@ -1,7 +1,12 @@
 import { wishlistActions } from '../context/constants/wishlistConstants'
 import { postWishlistItemService } from '../services/wishlistService'
 
-export const addWishlistItem = async (item, token, wishlistDispatch) => {
+export const addWishlistItem = async (
+    item,
+    token,
+    wishlistDispatch,
+    showToast
+) => {
     try {
         wishlistDispatch({ type: wishlistActions.LOADING })
 
@@ -16,9 +21,11 @@ export const addWishlistItem = async (item, token, wishlistDispatch) => {
                 payload: wishlist,
             })
 
-            console.log(wishlist, status)
+            showToast('Added to wishlist', 'success')
         }
     } catch (error) {
         wishlistDispatch({ type: wishlistActions.ERROR, payload: error })
+
+        showToast(`${error}`, 'error')
     }
 }

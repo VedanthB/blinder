@@ -1,6 +1,6 @@
 import { useContext, createContext, useReducer, useEffect } from 'react'
-import { getProductsService } from '../../services/productServices'
-import { productActions } from '../constants/productConstants'
+import { useToast } from '../../hooks/useToast'
+
 import { getProducts } from '../../utils/getProducts'
 import { productReducer } from '../reducers/productReducer'
 
@@ -15,8 +15,10 @@ const initState = {
 export const ProductProvider = ({ children }) => {
     const [state, productsDispatch] = useReducer(productReducer, initState)
 
+    const { showToast } = useToast()
+
     useEffect(() => {
-        getProducts(productsDispatch)
+        getProducts(productsDispatch, showToast)
     }, [])
 
     return (

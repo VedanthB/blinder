@@ -2,7 +2,12 @@ import axios from 'axios'
 import { authConstants } from '../context/constants/authConstants'
 import { signupService } from '../services/signupService'
 
-export const signupUser = async (userData, authDispatch, callback) => {
+export const signupUser = async (
+    userData,
+    authDispatch,
+    callback,
+    showToast
+) => {
     try {
         authDispatch({ type: authConstants.LOADING })
 
@@ -20,11 +25,15 @@ export const signupUser = async (userData, authDispatch, callback) => {
             })
 
             callback('/')
+
+            showToast('Signup Success', 'success')
         }
     } catch (error) {
         authDispatch({
             type: authConstants.ERROR,
             payload: error,
         })
+
+        showToast(`${error}`, 'error')
     }
 }

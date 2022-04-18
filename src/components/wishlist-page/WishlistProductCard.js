@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom'
 import { useAuth } from '../../context/providers/AuthProvider'
 import { useCart } from '../../context/providers/CartProvider'
 import { useWishlist } from '../../context/providers/WishlistProvider'
+import { useToast } from '../../hooks/useToast'
 import { deleteWishlistItem } from '../../utils/deleteWishlistItem'
 import { postCartItem } from '../../utils/postCartItem'
 
@@ -11,10 +12,8 @@ function WishlistProductCard({ product }) {
         cartState: { cart },
         cartDispatch,
     } = useCart()
-    const {
-        wishlistState: { wishlist },
-        wishlistDispatch,
-    } = useWishlist()
+
+    const { wishlistDispatch } = useWishlist()
 
     const {
         authState: { encodedToken },
@@ -22,9 +21,7 @@ function WishlistProductCard({ product }) {
 
     const isInCart = cart.find((item) => item._id === product._id)
 
-    console.log(isInCart)
-
-    deleteWishlistItem
+    const { showToast } = useToast()
 
     return (
         <div className="bg-regal-blue-dark rounded shadow-lg h-min">
@@ -49,11 +46,14 @@ function WishlistProductCard({ product }) {
                             backgroundColor: 'rgba(255, 255, 255, 0.596)',
                         }}
                         onClick={() =>
-                            deleteWishlistItem(
-                                product._id,
-                                encodedToken,
-                                wishlistDispatch
-                            )
+                            encodedToken
+                                ? deleteWishlistItem(
+                                      product._id,
+                                      encodedToken,
+                                      wishlistDispatch,
+                                      showToast
+                                  )
+                                : showToast('Please Login!', 'error')
                         }
                         className="btn-close bg-blue-500 text-blue-500"
                     ></button>
@@ -95,11 +95,17 @@ function WishlistProductCard({ product }) {
                                 <div
                                     className="tooltip cursor-pointer"
                                     onClick={() =>
-                                        postCartItem(
-                                            product,
-                                            encodedToken,
-                                            cartDispatch
-                                        )
+                                        encodedToken
+                                            ? postCartItem(
+                                                  product,
+                                                  encodedToken,
+                                                  cartDispatch,
+                                                  showToast
+                                              )
+                                            : showToast(
+                                                  'Please Login!',
+                                                  'error'
+                                              )
                                     }
                                 >
                                     <i className="fa fa-shopping-cart text-xl text-grey-400 text-hover-cyan-500"></i>

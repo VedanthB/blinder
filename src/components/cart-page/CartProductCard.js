@@ -4,6 +4,7 @@ import { cartActions } from '../../context/constants/cartConstants'
 import { useAuth } from '../../context/providers/AuthProvider'
 import { useCart } from '../../context/providers/CartProvider'
 import { useWishlist } from '../../context/providers/WishlistProvider'
+import { useToast } from '../../hooks/useToast'
 import { addWishlistItem } from '../../utils/addWishlistItem'
 import { deleteCartItem } from '../../utils/deleteCartItem'
 import {
@@ -13,6 +14,7 @@ import {
 
 function CartProductCard({ product }) {
     const { cartDispatch } = useCart()
+
     const {
         wishlistState: { wishlist },
         wishlistDispatch,
@@ -23,6 +25,8 @@ function CartProductCard({ product }) {
     } = useAuth()
 
     const isInWishlist = wishlist.find((item) => item._id === product._id)
+
+    const { showToast } = useToast()
 
     return (
         <div className="bg-regal-blue-dark rounded shadow-lg h-min">
@@ -47,11 +51,14 @@ function CartProductCard({ product }) {
                             backgroundColor: 'rgba(255, 255, 255, 0.596)',
                         }}
                         onClick={() =>
-                            deleteCartItem(
-                                product._id,
-                                encodedToken,
-                                cartDispatch
-                            )
+                            encodedToken
+                                ? deleteCartItem(
+                                      product._id,
+                                      encodedToken,
+                                      cartDispatch,
+                                      showToast
+                                  )
+                                : showToast('Please Login!', 'error')
                         }
                         className="btn-close bg-blue-500 text-blue-500"
                     ></button>
@@ -72,11 +79,14 @@ function CartProductCard({ product }) {
                                 border: 'none',
                             }}
                             onClick={() =>
-                                decrementCartItem(
-                                    product._id,
-                                    encodedToken,
-                                    cartDispatch
-                                )
+                                encodedToken
+                                    ? decrementCartItem(
+                                          product._id,
+                                          encodedToken,
+                                          cartDispatch,
+                                          showToast
+                                      )
+                                    : showToast('Please Login!', 'error')
                             }
                             className="text-2xl text-white cursor-pointer mr-3"
                         >
@@ -92,11 +102,14 @@ function CartProductCard({ product }) {
                             }}
                             className="text-2xl text-white cursor-pointer"
                             onClick={() =>
-                                incrementCartItem(
-                                    product._id,
-                                    encodedToken,
-                                    cartDispatch
-                                )
+                                encodedToken
+                                    ? incrementCartItem(
+                                          product._id,
+                                          encodedToken,
+                                          cartDispatch,
+                                          showToast
+                                      )
+                                    : showToast('Please Login!', 'error')
                             }
                         >
                             +
@@ -131,11 +144,17 @@ function CartProductCard({ product }) {
                                 <div
                                     className="tooltip cursor-pointer"
                                     onClick={() =>
-                                        addWishlistItem(
-                                            product,
-                                            encodedToken,
-                                            wishlistDispatch
-                                        )
+                                        encodedToken
+                                            ? addWishlistItem(
+                                                  product,
+                                                  encodedToken,
+                                                  wishlistDispatch,
+                                                  showToast
+                                              )
+                                            : showToast(
+                                                  'Please Login!',
+                                                  'error'
+                                              )
                                     }
                                 >
                                     <i className="fa fa-heart mr-3 text-xl text-grey-400 text-hover-cyan-500"></i>

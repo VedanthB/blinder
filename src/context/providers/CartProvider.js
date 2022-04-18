@@ -1,4 +1,5 @@
 import { useContext, createContext, useReducer, useEffect } from 'react'
+import { useToast } from '../../hooks/useToast'
 import { getCartItems } from '../../utils/getCartItems'
 import { cartReducer } from '../reducers/cartReducer'
 import { useAuth } from './AuthProvider'
@@ -18,13 +19,13 @@ export const CartProvider = ({ children }) => {
 
     const { encodedToken } = authState
 
+    const { showToast } = useToast()
+
     useEffect(() => {
         if (encodedToken) {
-            getCartItems(encodedToken, cartDispatch)
+            getCartItems(encodedToken, cartDispatch, showToast)
         }
     }, [encodedToken])
-
-    console.log(cartState)
 
     return (
         <CartContext.Provider value={{ cartState, cartDispatch }}>

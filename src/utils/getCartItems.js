@@ -1,7 +1,7 @@
 import { cartActions } from '../context/constants/cartConstants'
 import { getCartItemsService } from '../services/cartServices'
 
-export const getCartItems = async (token, cartDispatch) => {
+export const getCartItems = async (token, cartDispatch, showToast) => {
     try {
         cartDispatch({ type: cartActions.LOADING })
 
@@ -15,11 +15,15 @@ export const getCartItems = async (token, cartDispatch) => {
                 type: cartActions.GET_CART_ITEMS,
                 payload: cart,
             })
+
+            showToast('Get all cart items!', 'success')
         }
     } catch (error) {
         cartDispatch({
             type: cartActions.ERROR,
             payload: error,
         })
+
+        showToast(`${error}`, 'error')
     }
 }

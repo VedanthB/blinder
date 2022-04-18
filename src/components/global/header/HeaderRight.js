@@ -4,6 +4,7 @@ import { authConstants } from '../../../context/constants/authConstants'
 import { useAuth } from '../../../context/providers/AuthProvider'
 import { useCart } from '../../../context/providers/CartProvider'
 import { useWishlist } from '../../../context/providers/WishlistProvider'
+import { useToast } from '../../../hooks/useToast'
 
 function HeaderRight() {
     const { authState, authDispatch } = useAuth()
@@ -17,14 +18,18 @@ function HeaderRight() {
         wishlistState: { wishlist },
     } = useWishlist()
 
+    const { showToast } = useToast()
+
     return (
         <nav className="flex justify-center align-items-center">
             {encodedToken ? (
                 <div
                     className="btn btn-solid-cyan text-white mr-5"
-                    onClick={() =>
+                    onClick={() => {
                         authDispatch({ type: authConstants.LOGOUT_SUCCESS })
-                    }
+
+                        showToast('Logout Success!', 'success')
+                    }}
                 >
                     Logout
                 </div>
