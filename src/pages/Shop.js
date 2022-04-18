@@ -1,10 +1,9 @@
 import React, { useState, useEffect } from 'react'
-import FiltersSidebar from '../components/shop-page/filters/FiltersSideBar'
 
 import ProductPageCard from '../components/shop-page/ProductPageCard'
 
 import SortProductsDropdown from '../components/shop-page/SortProductsDropdown'
-import FiltersSidebar from '../components/shop-page/filters/FiltersSideBar'
+import FiltersSideBar from '../components/shop-page/filters/FiltersSideBar'
 
 import { useFilters } from '../context/providers/FilterProvider'
 
