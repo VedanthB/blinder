@@ -45,7 +45,7 @@ function LoginCard() {
                     />
                     <label
                         style={{ backgroundColor: '#0000227c' }}
-                        for="email"
+                        htmlFor="email"
                         className="input-label"
                     >
                         Email *
@@ -66,7 +66,7 @@ function LoginCard() {
                     />
                     <label
                         style={{ backgroundColor: '#0000227c' }}
-                        for="password"
+                        htmlFor="password"
                         className="input-label"
                     >
                         Password *
